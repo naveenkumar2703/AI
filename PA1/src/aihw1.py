@@ -42,7 +42,9 @@ def parse_input_file(cities_list,distance_lookup):
             if len(city1) > 0 and len(city2) > 0:
                 if not city1 in distance_lookup:
                     distance_lookup[city1]=[distance_obj]
-                else:                   
+                else:
+                    print city1
+                    print distance_lookup[city1]
                     distance_lookup[city1] = distance_lookup[city1].append(distance_obj)
                 if not city2 in distance_lookup:
                     distance_lookup[city2]=[distance_obj]
