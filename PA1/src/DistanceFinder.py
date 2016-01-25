@@ -22,3 +22,14 @@ class DistanceFinder (object):
 
     def checkIsDestination(self,currentLocation):
         return self.destination == currentLocation
+
+    def printRoute(self):
+        route = self.origin
+
+        for city in in_btw_cities:
+            route += ', ' + city
+
+        route += ', ' + self.destination
+        print route
+        
+        

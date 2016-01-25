@@ -1,8 +1,9 @@
 """Class that implements breadth first search algorithm"""
-from Distance import *
+from DistanceFinder import *
 
 class Depth_First_Finder(DistanceFinder):
 
     #To be implemented
-    def searchRoute():
+    def searchRoute(self):
+        print 'inside dfs finder'
         return

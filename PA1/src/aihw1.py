@@ -1,6 +1,10 @@
 """Program for AI programming assignment -1 and home work 2"""
 import csv
 from Distance import *
+from Breadth_First_Finder import *
+from Depth_First_Finder import *
+from Iterative_Depth_Finder import *
+from DistanceFinder import *
 
 def get_input(text_for_user):
     print text_for_user
@@ -87,3 +91,18 @@ while (search_method not in ['bfs','dfs','ids']):
 print 'Calling:' + search_method + ' algorithm'
 
 #TO DO call respective algorithm by passing in distance_lookup
+finder = None
+
+if search_method == 'bfs':
+    finder = Breadth_First_Finder(city1, city2, distance_lookup)
+elif search_method == 'dfs':
+    finder = Depth_First_Finder(city1, city2, distance_lookup)
+elif search_method == 'ids':
+    finder = Iterative_Depth_Finder(city1, city2, distance_lookup)
+
+finder.searchRoute()
+
+
+
+    
+

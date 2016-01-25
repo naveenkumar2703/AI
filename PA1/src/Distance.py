@@ -5,4 +5,4 @@ class Distance(object):
         self.distance = distance
 
     def __str__(self):
-        return self.city1 + ' is ' + self.distance + 'kms away from' + self.city2
+        return self.city1 + ' is ' + self.distance + 'kms away from ' + self.city2
