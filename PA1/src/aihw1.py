@@ -1,5 +1,6 @@
 """Program for AI programming assignment -1 and home work 2"""
 import csv
+from Distance import *
 
 def get_input(text_for_user):
     print text_for_user
@@ -8,14 +9,6 @@ def get_input(text_for_user):
 def num_exist(string):
     return any(char.isdigit() for char in string)
 
-class Distance(object):
-    def __init__(self,city1,city2,distance):
-        self.city1 = city1
-        self.city2 = city2
-        self.distance = distance
-
-    def __str__(self):
-        return self.city1 + ' is ' + self.distance + 'kms away from' + self.city2
         
 
 def parse_input_file(cities_list,distance_lookup):
@@ -45,24 +38,21 @@ def parse_input_file(cities_list,distance_lookup):
                     columns_parsed += 1
                     
             distance_obj = Distance(city1,city2,distance)
-            print city1
-            print distance_obj
+            
             if len(city1) > 0 and len(city2) > 0:
                 if not city1 in distance_lookup:
                     distance_lookup[city1]=[distance_obj]
-                else:
-                    print distance_lookup[city1]
+                else:                   
                     distance_lookup[city1] = distance_lookup[city1].append(distance_obj)
                 if not city2 in distance_lookup:
                     distance_lookup[city2]=[distance_obj]
                 else:
-                    print distance_lookup[city2]
                     distance_lookup[city2] = distance_lookup[city2].append(distance_obj)
             
                 
     print distance_lookup
     print cities_list
-    return ""
+    return distance_lookup
 
 
 cities_list = []
