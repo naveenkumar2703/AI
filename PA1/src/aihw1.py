@@ -19,15 +19,15 @@ def parse_input_file(cities_list,distance_lookup):
         city1 = ''
         city2 = ''
         distance = ''
-        print row
+        #print row
         if len(row) > 0:
             
             for column in row:
-                
+                #print column
                 if columns_parsed == 3:
                     break
                 elif len(column) > 0:
-                    if column not in cities_list and not num_exist(column):
+                    if (column.lower() not in cities_list) and (not num_exist(column)):
                         cities_list.append(column.lower())
                     if columns_parsed == 0:
                         city1 = column.lower()
@@ -39,21 +39,27 @@ def parse_input_file(cities_list,distance_lookup):
                     
             distance_obj = Distance(city1,city2,distance)
             
-            if len(city1) > 0 and len(city2) > 0:
+            
+            if len(city1) > 0 and len(city2) > 0 and len(distance)>0:
+                print distance_obj
                 if not city1 in distance_lookup:
                     distance_lookup[city1]=[distance_obj]
                 else:
-                    print city1
-                    print distance_lookup[city1]
-                    distance_lookup[city1] = distance_lookup[city1].append(distance_obj)
+                    #print 'city1-'+city1
+                    #print distance_lookup[city1]
+                    distance_lookup[city1].append(distance_obj)
+                    #print distance_lookup[city1]
                 if not city2 in distance_lookup:
                     distance_lookup[city2]=[distance_obj]
                 else:
-                    distance_lookup[city2] = distance_lookup[city2].append(distance_obj)
+                    #print 'city2'+city2
+                    #print distance_lookup[city2]
+                    distance_lookup[city2].append(distance_obj)
             
                 
     print distance_lookup
     print cities_list
+    print len(cities_list)
     return distance_lookup
 
 
