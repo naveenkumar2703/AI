@@ -23,7 +23,7 @@ def parse_input_file(cities_list,distance_lookup):
         if len(row) > 0:
             
             for column in row:
-                print column
+                
                 if columns_parsed == 3:
                     break
                 elif len(column) > 0:
