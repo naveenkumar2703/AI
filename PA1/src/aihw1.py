@@ -7,7 +7,7 @@ from Iterative_Depth_Finder import *
 from DistanceFinder import *
 
 def get_input(text_for_user):
-    print text_for_user
+    print (text_for_user)
     return raw_input()
 
 def num_exist(string):
@@ -45,7 +45,7 @@ def parse_input_file(cities_list,distance_lookup):
             
             
             if len(city1) > 0 and len(city2) > 0 and len(distance)>0:
-                print distance_obj
+                #print distance_obj
                 if not city1 in distance_lookup:
                     distance_lookup[city1]=[distance_obj]
                 else:
@@ -61,9 +61,9 @@ def parse_input_file(cities_list,distance_lookup):
                     distance_lookup[city2].append(distance_obj)
             
                 
-    print distance_lookup
-    print cities_list
-    print len(cities_list)
+    #print distance_lookup
+    #print cities_list
+    #print len(cities_list)
     return distance_lookup
 
 
