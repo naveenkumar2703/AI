@@ -11,7 +11,7 @@ class Breadth_First_Finder(DistanceFinder):
         print 'inside bfs finder'
         if super(Breadth_First_Finder,self).checkIsDestination(self.origin):
             print 'origin is destination'
-            super(Breadth_First_Finder,self).printRoute()
+            super(Breadth_First_Finder,self).printRoute(None)
         else:
             origin_node = location(self.origin,None,self.distance_directory)
             search_tree = [origin_node]

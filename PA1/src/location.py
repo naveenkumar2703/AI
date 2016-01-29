@@ -11,10 +11,11 @@ def get_next_location_names(currentcity,prev_city,route_dict):
         
         for dist in route_dict.get(currentcity):
             #print dist
-            if prev_city != None and (dist.city1 != prev_city.city or dist.city2 != prev_city.city):
+            if prev_city != None and dist.city1 != prev_city.city and dist.city2 != prev_city.city:
                 nxt_city_lst.append(get_other_city(dist, currentcity))               
             elif prev_city == None:
                 nxt_city_lst.append(get_other_city(dist, currentcity))
+        #print nxt_city_lst
         return nxt_city_lst
 
 

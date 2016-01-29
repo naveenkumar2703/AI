@@ -97,8 +97,12 @@ if search_method == 'bfs':
     finder = Breadth_First_Finder(city1, city2, distance_lookup)
 elif search_method == 'dfs':
     finder = Depth_First_Finder(city1, city2, distance_lookup)
-elif search_method == 'ids':
-    finder = Iterative_Depth_Finder(city1, city2, distance_lookup)
+elif search_method == 'ids':    
+    limit = get_input('Enter limit for iterative depth search:').lower()
+    while(not limit.isdigit()):
+        limit = get_input('Enter a number to set as depth:').lower()
+    finder = Iterative_Depth_Finder(city1, city2, distance_lookup,limit)
+
 
 finder.searchRoute()
 

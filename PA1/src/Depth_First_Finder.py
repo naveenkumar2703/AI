@@ -9,10 +9,10 @@ class Depth_First_Finder(DistanceFinder):
         print 'inside dfs finder'
         if super(Depth_First_Finder,self).checkIsDestination(self.origin):
             print 'origin is destination'
-            super(Depth_First_Finder,self).printRoute()
+            super(Depth_First_Finder,self).printRoute(None)
         else:
             origin_node = location(self.origin,None,self.distance_directory)
-            search_tree = [origin_node]
+            #search_tree = [origin_node]
             destination = None
             if not super(Depth_First_Finder,self).is_dead_end(origin_node):
                destination =  self.explore_child_nodes(origin_node)
@@ -26,7 +26,7 @@ class Depth_First_Finder(DistanceFinder):
     def explore_child_nodes(self,node):
         destination = None
         for option in node.next_location_names:
-            print 'Exploring option: '+option
+            #print 'Exploring option: '+option+' - from parent node: '+ node.city
             option_node = location(option,node,self.distance_directory)
             if super(Depth_First_Finder,self).checkIsDestination(option_node.city):
                 return option_node
