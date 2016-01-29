@@ -49,7 +49,7 @@ class DistanceFinder (object):
                 self.route.append(parent_city.city)                    
 
             self.route = list(reversed(self.route))
-            print self.route
+            #print self.route
                 
 
         for city in self.route:

@@ -31,9 +31,7 @@ class Iterative_Depth_Finder(DistanceFinder):
         return
 
     def explore_child_nodes(self,node,depth,limit):
-        destination = None
-        print node.next_location_names
-        
+        destination = None        
         for option in node.next_location_names:
             #print 'Exploring option: '+option+' - from parent node: '+ node.city + ' Index - '+str(depth)+'limit - '+str(limit)
             option_node = location(option,node,self.distance_directory)
