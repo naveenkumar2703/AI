@@ -28,7 +28,7 @@ class Breadth_First_Finder(DistanceFinder):
                         search_tree.extend(create_next_locations(node, node.next_location_names, self.distance_directory))
                     #print len(search_tree)
                 #print 'Destination is:'
-                print destination.city
+                #print destination.city
 
                 """self.route = [destination.city]
                 parent_city = destination.prev_city
