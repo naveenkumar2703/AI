@@ -53,7 +53,7 @@ class DistanceFinder (object):
                 
 
         for city in self.route:
-            route += city + ', '
+            route += city.capitalize() + ', '
             if from_city == None:
                 from_city = city
             elif to_city == None:
@@ -64,6 +64,8 @@ class DistanceFinder (object):
             #else:
                 #call calculate dist bwn cities function and swap cities
 
+        
+        route = route[:-2]
         route += ' - ' + str(distance)
         print route
         return route
