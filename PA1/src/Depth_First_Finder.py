@@ -7,7 +7,7 @@ class Depth_First_Finder(DistanceFinder):
     #To be implemented
     def searchRoute(self):
         if super(Depth_First_Finder,self).checkIsDestination(self.origin):
-            print 'origin is destination'
+            print ('origin is destination')
             super(Depth_First_Finder,self).printRoute(None)
         else:
             origin_node = location(self.origin,None,self.distance_directory)
@@ -18,7 +18,7 @@ class Depth_First_Finder(DistanceFinder):
                super(Depth_First_Finder,self).printRoute(destination)                
 
             else:
-                print 'you are in island'
+                print ('you are in island')
             
         return self.route
 

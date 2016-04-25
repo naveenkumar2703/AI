@@ -67,7 +67,7 @@ class DistanceFinder (object):
         
         route = route[:-2]
         route += ' - ' + str(distance)
-        print route
+        print (route)
         return route
 
     def is_dead_end(self,location):

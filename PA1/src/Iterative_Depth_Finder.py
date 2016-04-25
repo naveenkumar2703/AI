@@ -12,7 +12,7 @@ class Iterative_Depth_Finder(DistanceFinder):
     def searchRoute(self):
         #print 'inside ids finder'
         if super(Iterative_Depth_Finder,self).checkIsDestination(self.origin):
-            print 'origin is destination'
+            print ('origin is destination')
             super(Iterative_Depth_Finder,self).printRoute(None)
         else:
             origin_node = location(self.origin,None,self.distance_directory)
@@ -26,7 +26,7 @@ class Iterative_Depth_Finder(DistanceFinder):
                 super(Iterative_Depth_Finder,self).printRoute(destination)                
 
             else:
-                print 'you are in island'
+                print ('you are in island')
             
         return self.route
 

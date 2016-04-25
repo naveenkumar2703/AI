@@ -10,7 +10,7 @@ class Breadth_First_Finder(DistanceFinder):
     def searchRoute(self):
         #print 'inside bfs finder'
         if super(Breadth_First_Finder,self).checkIsDestination(self.origin):
-            print 'origin is destination'
+            print ('origin is destination')
             super(Breadth_First_Finder,self).printRoute(None)
         else:
             origin_node = location(self.origin,None,self.distance_directory)
@@ -45,7 +45,7 @@ class Breadth_First_Finder(DistanceFinder):
                 super(Breadth_First_Finder,self).printRoute(destination)
 
             else:
-                print 'you are in island'
+                print ('you are in island')
             
         return self.route
 

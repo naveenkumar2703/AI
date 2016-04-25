@@ -10,7 +10,7 @@ from DistanceFinder import *
 
 def get_input(text_for_user):
     print (text_for_user)
-    return raw_input()
+    return input()
 
 def num_exist(string):
     return any(char.isdigit() for char in string)
@@ -75,22 +75,22 @@ distance_lookup = {}
 parse_input_file(cities_list,distance_lookup)
 city1 = get_input('Enter city 1:').lower()
 while(city1 not in cities_list):
-    print city1 + ' is not in Romania.'
+    print (city1 + ' is not in Romania.')
     city1 = get_input('Enter city 1:').lower()
 
 city2 = get_input('Enter city 2:').lower()
 
 while(city2 not in cities_list):
-    print city2 + ' is not in Romania.'
+    print (city2 + ' is not in Romania.')
     city2 = get_input('Enter city 2:').lower()
 
 
 search_method = get_input('Choose a search method: bfs or dfs or ids').lower()
 
 while (search_method not in ['bfs','dfs','ids']):
-    print 'Invalid search method!!!'
+    print ('Invalid search method!!!')
     search_method = get_input('Choose a search method: bfs or dfs or ids').lower()
-print 'Calling:' + search_method + ' algorithm'
+print ('Calling:' + search_method + ' algorithm')
 
 #TO DO call respective algorithm by passing in distance_lookup
 finder = None
